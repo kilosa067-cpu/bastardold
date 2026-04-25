@@ -1,0 +1,115 @@
+╔══════════════════════════════════════════════════════════════════╗
+║     BASTARD OLD SCHOOL MASTER BARBER - DESPLIEGUE VERCEL        ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📁 IMÁGENES REQUERIDAS (colocar en /public/images/)
+─────────────────────────────────────────────────────
+
+1. entrada.jpg    → Foto del local/barbería para el banner principal
+2. haircut.jpg    → Foto de barberos trabajando (para perfiles)
+3. bastard.jpg    → Foto del fundador (para historia y noticias)
+4. logob.png      → Logo de la marca (opcional)
+
+💡 Tamaños recomendados:
+   - entrada.jpg: 1920x1080px (formato landscape)
+   - haircut.jpg: 800x1000px (formato portrait)
+   - bastard.jpg: 800x1000px (formato portrait)
+
+
+🚀 PASOS PARA DESPLEGAR EN VERCEL
+─────────────────────────────────────────────────────
+
+PASO 1: Preparar imágenes
+   - Copia tus imágenes a la carpeta /public/images/
+   - Asegúrate de que tengan los nombres exactos de arriba
+
+PASO 2: Subir a GitHub
+   ─────────────────────────────────────────────────
+   git init
+   git add .
+   git commit -m "Version lista para produccion"
+   git branch -M main
+   git remote add origin https://github.com/TU_USUARIO/bastard-barber.git
+   git push -u origin main
+   
+PASO 3: Conectar con Vercel
+   ─────────────────────────────────────────────────
+   1. Ve a https://vercel.com
+   2. Login con tu cuenta de GitHub
+   3. Click "Add New Project"
+   4. Selecciona el repositorio "bastard-barber"
+   5. Framework Preset: Vite
+   6. Build Command: npm run build
+   7. Output Directory: dist
+   8. Click "Deploy"
+
+PASO 4: Configurar dominio (opcional)
+   ─────────────────────────────────────────────────
+   1. En Vercel, ve a Settings > Domains
+   2. Agrega tu dominio: bastardoldschool.com
+   3. Sigue las instrucciones de DNS que te da Vercel
+
+
+💳 ACTIVAR PAYPAL (Opcional)
+─────────────────────────────────────────────────────
+
+1. Ve a https://developer.paypal.com/
+2. Crea una cuenta de desarrollador
+3. Crea una nueva aplicación
+4. Copia el "Client ID"
+5. Crea un archivo .env en la raíz del proyecto:
+
+   VITE_PAYPAL_CLIENT_ID=tu_client_id_aqui
+
+6. En src/sections/Agenda.tsx, busca "PayPalButton" y 
+   reemplaza el mock con la integración real (ver README)
+
+
+🔐 ACCESO AL PANEL DE ADMIN
+─────────────────────────────────────────────────────
+
+1. Ve al footer de la página
+2. Click en "Admin"
+3. Contraseña: bastard2024
+
+Desde ahí puedes:
+   - Editar textos, imágenes, barberos, servicios
+   - Gestionar citas y caja
+   - Cambiar colores del tema
+
+
+📱 RESPONSIVE
+─────────────────────────────────────────────────────
+
+La página funciona perfectamente en:
+   ✅ Desktop (1920px+)
+   ✅ Laptop (1366px)
+   ✅ Tablet (768px)
+   ✅ Móvil (375px)
+
+
+🐛 SI TIENES PROBLEMAS
+─────────────────────────────────────────────────────
+
+1. "Cannot find module"
+   → npm install
+
+2. Imágenes no cargan
+   → Verifica que estén en public/images/
+   → Usa nombres exactos: entrada.jpg, haircut.jpg, bastard.jpg
+
+3. Cambios no se ven
+   → Limpia caché del navegador (Ctrl+Shift+R)
+   → Reconstruye: npm run build
+
+4. Error al hacer build
+   → Revisa la consola para ver el error específico
+   → Asegúrate de tener Node.js 18+
+
+
+📞 CONTACTO Y SOPORTE
+─────────────────────────────────────────────────────
+
+Para más detalles, revisa el archivo README-BASTARD.md
+
+¡Éxito con tu barbería! 💈✂️
